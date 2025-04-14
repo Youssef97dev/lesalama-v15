@@ -12,37 +12,18 @@ const Loader = () => {
 
   useEffect(() => {
     // Simulate loading time
-    const timer = setTimeout(() => setIsClient(true), 2500);
+    const timer = setTimeout(() => setIsClient(true), 1000);
     return () => clearTimeout(timer);
   }, []);
   return (
     <>
-      {isClient ? (
+      {isClient && (
         <div className="relative flex flex-col justify-center items-center">
           <SocialsMobile />
           <NavbarMobile />
           <Gallery />
           <Footer />
           <Mapbox />
-        </div>
-      ) : (
-        <div className="fixed inset-0 z-40 flex items-center justify-center">
-          {/* Initial white background animation */}
-          <div className="absolute inset-0 flex z-50">
-            <div className="bg-color_1  flex-1 animate-slide-left"></div>
-            <div className="bg-color_1  flex-1 animate-slide-right"></div>
-          </div>
-
-          {/* Beige background with logo animation */}
-          <div className="absolute inset-0 bg-color_2 flex items-center justify-center">
-            <Image
-              src="/logo-salama-humberger-white.png" // Replace with your logo path
-              alt="Logo"
-              width={1000}
-              height={1000}
-              className="w-32 h-32 animate-scale-3d"
-            />
-          </div>
         </div>
       )}
     </>
