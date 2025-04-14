@@ -1,16 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import SocialsMobile from "./SocialsMobile";
-import NavbarMobile from "./NavbarMobile";
-import Hero from "./Hero";
-import Navbar from "./Navbar";
-import About from "./About";
-import Show from "./Show";
-import Culinary from "./Culinary";
-import Footer from "./Footer";
-import Mapbox from "./Mapbox";
-import MobileAccordion from "./MobileAccordion";
+import Gallery from "./Gallery";
+import Footer from "@/components/Footer";
+import Mapbox from "@/components/Mapbox";
+import SocialsMobile from "@/components/SocialsMobile";
+import NavbarMobile from "@/components/NavbarMobile";
 
 const Loader = () => {
   const [isClient, setIsClient] = useState(false);
@@ -23,15 +18,10 @@ const Loader = () => {
   return (
     <>
       {isClient ? (
-        <div className="relative p-0 lg:p-7 w-full h-full flex flex-col justify-start items-center">
+        <div className="relative flex flex-col justify-center items-center">
           <SocialsMobile />
           <NavbarMobile />
-          <Navbar />
-          <Hero />
-          <About />
-          <MobileAccordion />
-          <Show />
-          <Culinary />
+          <Gallery />
           <Footer />
           <Mapbox />
         </div>
